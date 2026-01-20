@@ -10,9 +10,11 @@ def button_callback():
     if textbox.get("0.0", "end").strip() == "": return
     task_manager.save(textbox.get("0.0", "end"))
     in_progress = task_manager.is_task_status()
+
     if in_progress:
         textbox.configure(state="disabled")
         update_worklog()
+
     else:
         textbox.configure(state="normal")
         textbox.delete("0.0", "end")

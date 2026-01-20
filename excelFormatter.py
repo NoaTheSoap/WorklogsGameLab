@@ -11,7 +11,7 @@ def extract_data():
     for item in data["tasks"]:
         task = item["task"]
         rows.append({
-            "start_time": pd.to_datetime(task["start_time"], format="%H:%M.%d.%m.%y").strftime("%d.%m.%y"),
+            "start_time": pd.to_datetime(task["start_time"], format="%H:%M.%d.%m.%y").strftime("%d/%m/%y"),
             "task": task["task"].strip(),
             "hours": task["hours"],
         })
