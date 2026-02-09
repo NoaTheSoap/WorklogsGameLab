@@ -1,5 +1,7 @@
 ﻿from datetime import datetime, timedelta
 
+decimal_separator = "."
+
 def get_time():
     return datetime.now().strftime("%H:%M.%d.%m.%y")
 
@@ -19,6 +21,6 @@ def calculate_time(start):
     else:
         diff = now - start_time
 
-    hour = str(round(diff.total_seconds() / 3600, 2)).replace(".", ",")
+    hour = str(round(diff.total_seconds() / 3600, 2)).replace(".", decimal_separator)
     return hour
 
