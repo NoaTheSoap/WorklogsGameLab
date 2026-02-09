@@ -6,6 +6,10 @@ def get_time():
 def get_date():
     return datetime.now().strftime("%d.%m.%Y")
 
+def get_week(date):
+    dt = datetime.strptime(date, "%H:%M.%d.%m.%y")
+    return dt.isocalendar().week
+
 def calculate_time(start):
     now = datetime.strptime(get_time(), "%H:%M.%d.%m.%y")
     start_time = datetime.strptime(start, "%H:%M.%d.%m.%y")

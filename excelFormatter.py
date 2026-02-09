@@ -1,8 +1,9 @@
 ﻿import pandas as pd
 import task_manager
+import time_utils
 
 def copy_to_clipboard():
-    dataframe = pd.DataFrame(extract_data(), columns=["start_time", "task", "hours"])
+    dataframe = pd.DataFrame(extract_data(), columns=["task", "start_time", "week", "hours"])
     dataframe.to_clipboard(index=False, header=False)
 
 def extract_data():
@@ -13,6 +14,7 @@ def extract_data():
         rows.append({
             "start_time": pd.to_datetime(task["start_time"], format="%H:%M.%d.%m.%y").strftime("%d/%m/%y"),
             "task": task["task"].strip(),
+            "week": time_utils.get_week(task["start_time"]),
             "hours": task["hours"],
         })
     return rows
