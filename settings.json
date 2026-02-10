@@ -1,0 +1,10 @@
+{
+    "column_order": [
+        "Hours",
+        "Work Description",
+        "Date",
+        "Week number"
+    ],
+    "decimal_separator": ",",
+    "date_separator": "."
+}

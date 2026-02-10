@@ -5,16 +5,14 @@ SETTINGS_FILE = "settings.json"
 
 DEFAULT_SETTINGS = {
     "column_order": [
-        "task",
-        "hours",
-        "start_time",
-        "week",
+        "Work Description",
+        "Hours",
+        "Date",
+        "Week number",
         "empty"
     ],
     "decimal_separator": ",",
     "date_separator": ".",
-    "auto_copy": False,
-    "theme": "dark"
 }
 
 def load_settings():

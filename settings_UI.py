@@ -1,7 +1,7 @@
 ﻿import customtkinter
 import settings_manager
 
-OPTIONS = ["task", "hours", "start_time", "week", "empty"]
+OPTIONS = ["Work Description", "Hours", "Date", "Week number", "Empty"]
 class SettingsWindow(customtkinter.CTkToplevel):
     def __init__(self, master):
         super().__init__(master)
@@ -19,6 +19,9 @@ class SettingsWindow(customtkinter.CTkToplevel):
         self.dropdown_frame = customtkinter.CTkFrame(self)
         self.dropdown_frame.pack(pady=20, padx=20, fill="x")
 
+        format_label = customtkinter.CTkLabel(self.dropdown_frame, text="Spreadsheet layout", font=("Arial", 16))
+        format_label.grid(row=0, column=0, columnspan=1, pady=(10, 15))
+
         self.dropdowns = []
         # Generate a row of dropdowns
         for i in range(4):
@@ -28,7 +31,7 @@ class SettingsWindow(customtkinter.CTkToplevel):
                 width=150
             )
             dropdown.set(self.settings["column_order"][i])
-            dropdown.grid(row=0, column=i, padx=10, pady=10)
+            dropdown.grid(row=1, column=i, padx=10, pady=10)
             self.dropdowns.append(dropdown)
 
         # -------- Date and number separator --------

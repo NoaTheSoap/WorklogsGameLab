@@ -9,12 +9,14 @@ COLUMN_MAP = {
     "Week number": "week",
     "Hours": "hours",
     "Date": "start_time",
-    "Work Description": "task"
+    "Work Description": "task",
+    "Empty": "empty"
 }
 
 def copy_to_clipboard():
     settings = settings_manager.load_settings()
-    dataframe = pd.DataFrame(extract_data(), columns=settings["column_order"])
+    mapped_columns = [COLUMN_MAP[col] for col in settings["column_order"]]
+    dataframe = pd.DataFrame(extract_data(), columns=mapped_columns)
     dataframe.to_clipboard(index=False, header=False)
 
 def extract_data():
