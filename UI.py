@@ -1,6 +1,7 @@
 ﻿import customtkinter
 import task_manager
 import excelFormatter
+import settings_UI
 
 app = customtkinter.CTk()
 app.title("Time Teller")
@@ -21,6 +22,9 @@ def button_callback():
     button.configure(text="End Task" if in_progress else "Start Task")
     button.configure(fg_color="#cc0000" if in_progress else "green")
 
+def button_settings():
+    settings_UI.SettingsWindow(app)
+
 
 def copy_button_callback():
     excelFormatter.copy_to_clipboard()
@@ -34,9 +38,13 @@ def update_worklog():
         worklog.insert("end", line)
     worklog.configure(state="disabled")
 
-# textbox og button 120 diff y
+# To clipboard button
 copy_button = customtkinter.CTkButton(app, text="Copy", command=copy_button_callback)
 copy_button.place(x=20, y=20)
+
+# Open settings button
+settings_button = customtkinter.CTkButton(app, text="⚙", command=button_settings, width=20)
+settings_button.place(x=180, y=20)
 
 textbox = customtkinter.CTkTextbox(app, width=200, height=100)
 textbox.place(x=20, y=100)
