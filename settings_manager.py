@@ -4,13 +4,15 @@ import json
 SETTINGS_FILE = "settings.json"
 
 DEFAULT_SETTINGS = {
-    "excel_path": "",
     "column_order": [
-        "Week number",
-        "Hours",
-        "Date",
-        "Work Description"
+        "task",
+        "hours",
+        "start_time",
+        "week",
+        "empty"
     ],
+    "decimal_separator": ",",
+    "date_separator": ".",
     "auto_copy": False,
     "theme": "dark"
 }
