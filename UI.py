@@ -4,7 +4,7 @@ import excelFormatter
 import settings_UI
 
 app = customtkinter.CTk()
-app.title("Time Teller")
+app.title("Worklogs")
 app.geometry("560x300")
 
 def button_callback():

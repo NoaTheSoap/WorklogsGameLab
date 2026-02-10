@@ -6,7 +6,7 @@ class SettingsWindow(customtkinter.CTkToplevel):
     def __init__(self, master):
         super().__init__(master)
 
-        self.title("Innstillinger")
+        self.title("Settings")
         self.geometry("720x360")
 
         self.grab_set()
