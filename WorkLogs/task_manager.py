@@ -4,7 +4,7 @@ import os
 import time_utils
 import jsonFormat
 
-filepath = Path.home() / "Documents" / "TimeTeller"
+filepath = Path.home() / "Documents" / "WorkLogs" / "Logs"
 today_path = os.path.join(filepath, time_utils.get_date()+".json")
 
 unfinished_task = False

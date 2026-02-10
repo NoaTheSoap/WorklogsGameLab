@@ -1,7 +1,8 @@
 ﻿import os
 import json
+from pathlib import Path
 
-SETTINGS_FILE = "settings.json"
+SETTINGS_FILE = Path.home() / "Documents" / "WorkLogs" / "settings.json"
 
 DEFAULT_SETTINGS = {
     "column_order": [
@@ -9,7 +10,6 @@ DEFAULT_SETTINGS = {
         "Hours",
         "Date",
         "Week number",
-        "empty"
     ],
     "decimal_separator": ",",
     "date_separator": ".",
