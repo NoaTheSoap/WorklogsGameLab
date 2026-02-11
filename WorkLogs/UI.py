@@ -57,6 +57,6 @@ worklog.configure(state="disabled")
 worklog.place(x=240, y=20)
 
 
-
+update_worklog()
 app.mainloop()
 
