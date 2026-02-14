@@ -2,10 +2,12 @@
 import task_manager
 import excelFormatter
 import settings_UI
+import settings_manager
 
 app = customtkinter.CTk()
 app.title("Worklogs")
 app.geometry("560x300")
+customtkinter.set_appearance_mode(settings_manager.load_settings()["appearance_mode"])
 
 def button_callback():
     if textbox.get("0.0", "end").strip() == "": return

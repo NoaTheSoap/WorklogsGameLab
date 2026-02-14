@@ -13,6 +13,7 @@ DEFAULT_SETTINGS = {
     ],
     "decimal_separator": ",",
     "date_separator": ".",
+    "appearance_mode": "system"
 }
 
 def load_settings():
